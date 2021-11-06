@@ -15,6 +15,15 @@ class CreateEntriesTable extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('provider_id')->constrained('providers');
+            $table->foreignId('user_id')->constrained('users');
+            $table->string('type_voucher', 20); // Tipo comprobante de pago
+            $table->string('serie_voucher', 20);
+            $table->string('num_voucher', 20);
+            $table->datetime('date');
+            $table->double('tax', 4, 2);
+            $table->double('total_buy', 11, 2);
+            $table->boolean('state')->default(true);
             $table->timestamps();
         });
     }

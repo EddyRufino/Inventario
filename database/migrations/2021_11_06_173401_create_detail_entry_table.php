@@ -15,6 +15,11 @@ class CreateDetailEntryTable extends Migration
     {
         Schema::create('detail_entry', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
+            $table->foreignId('entry_id')->constrained('enties')->onDelete('cascade');
+            $table->foreignId('store_id')->constrained('stores')->onDelete('cascade');
+            $table->integer('amount');
+            $table->double('price_buy', 11, 2);
             $table->timestamps();
         });
     }

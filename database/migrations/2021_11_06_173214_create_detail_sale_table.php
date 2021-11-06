@@ -15,6 +15,12 @@ class CreateDetailSaleTable extends Migration
     {
         Schema::create('detail_sale', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
+            $table->foreignId('sale_id')->constrained('sales')->onDelete('cascade');
+            $table->foreignId('store_id')->constrained('stores')->onDelete('cascade');
+            $table->integer('amount');
+            $table->double('price_sale', 11, 2);
+            $table->double('discount', 11, 2);
             $table->timestamps();
         });
     }
