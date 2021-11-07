@@ -13,8 +13,15 @@ class ClientFactory extends Factory
      */
     public function definition()
     {
+        $voucher = ['Boleta', 'Factura'];
+
         return [
-            //
+            'name' => $this->faker->company(),
+            'type_document' => $voucher[mt_rand(0,count($voucher)-1)],
+            'num_document' => $this->faker->randomNumber(8),
+            'address' => $this->faker->address(),
+            'phone' => $this->faker->phoneNumber(),
+            'email' => $this->faker->unique()->email()
         ];
     }
 }

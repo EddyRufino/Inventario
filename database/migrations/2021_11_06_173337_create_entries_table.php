@@ -21,7 +21,7 @@ class CreateEntriesTable extends Migration
             $table->string('serie_voucher', 20);
             $table->string('num_voucher', 20);
             $table->datetime('date');
-            $table->double('tax', 4, 2);
+            $table->double('tax', 6, 2);
             $table->double('total_buy', 11, 2);
             $table->boolean('state')->default(true);
             $table->timestamps();

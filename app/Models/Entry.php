@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Entry extends Model
 {
     use HasFactory;
+
+    public function detail_entries()
+    {
+        return $this->hasMany(DetailEntry::class);
+    }
 }
