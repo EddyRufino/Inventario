@@ -4,7 +4,7 @@
 
             <Sidebar />
 
-            <div class="w-full bg-gray-50 pl-0 lg:pl-64 min-h-screen" :class="sideBarOpen ? 'overlay' : ''" id="main-content">
+            <div class="w-full bg-gray-100 pl-0 lg:pl-64 min-h-screen" :class="sideBarOpen ? 'overlay' : ''" id="main-content">
 
                 <Navbar />
 
@@ -17,15 +17,20 @@
     </div>
 </template>
 
-<script setup>
-
+<script >
+import { mapState } from 'vuex'
 import Sidebar from '@/Components/Admin/Sidebar'
 import Navbar from '@/Components/Admin/Navbar'
 import Footer from '@/Components/Admin/Footer'
 
-components: {
-    Sidebar,
-    Navbar,
-    Footer
+export default {
+    components: {
+        Sidebar,
+        Navbar,
+        Footer
+    },
+    computed: {
+        ...mapState(['sideBarOpen'])
+    },
 }
 </script>

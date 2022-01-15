@@ -3,7 +3,9 @@ require('./bootstrap');
 import { createApp, h } from 'vue';
 import { createInertiaApp, Link, Head } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
+import { createStore } from 'vuex';
 import Layout from '@/Layouts/Panel.vue';
+import store from '@/store/index';
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -21,6 +23,7 @@ createInertiaApp({
     setup({ el, app, props, plugin }) {
         return createApp({ render: () => h(app, props) })
             .use(plugin)
+            .use(store)
             .component('Link', Link)
             .component('Head', Head)
             .mixin({ methods: { route } })

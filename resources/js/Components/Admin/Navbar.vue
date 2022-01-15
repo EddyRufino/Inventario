@@ -43,22 +43,20 @@
 </template>
 
 <script>
-// import { mapState } from 'vuex'
-
+import { mapState } from 'vuex'
 export default {
-    name: 'Navbar',
-    // computed: {
-    //     ...mapState(['sideBarOpen'])
-    // },
     data() {
         return {
             dropDownOpen: false
         }
     },
     methods: {
-        // toggleSidebar() {
-        //     this.$store.dispatch('toggleSidebar')
-        // }
-    }
+        toggleSidebar() {
+            this.$store.dispatch('toggleSidebar')
+        }
+    },
+    computed: {
+        ...mapState(['sideBarOpen'])
+    },
 }
 </script>
