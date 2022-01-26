@@ -7,7 +7,7 @@ use Inertia\Inertia;
 
 Route::get('/dashboard', function () {
     return Inertia::render('Admin/Dashboard');
-})->name('dashboard');
+})->name('dashboard')->middleware('auth');
 
 Route::resource('products', ProductController::class);
 

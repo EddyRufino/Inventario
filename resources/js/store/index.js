@@ -1,11 +1,9 @@
-import { createApp } from 'vue';
+//import { createApp } from 'vue';
 import { createStore } from 'vuex';
 
 const store = createStore({
     state: {
-        // return {
-            sideBarOpen: false
-        // }
+        sideBarOpen: false
     },
     getters: {
         sideBarOpen: state => {

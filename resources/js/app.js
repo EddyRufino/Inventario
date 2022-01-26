@@ -3,7 +3,7 @@ require('./bootstrap');
 import { createApp, h } from 'vue';
 import { createInertiaApp, Link, Head } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
-import { createStore } from 'vuex';
+///import { createStore } from 'vuex';
 import Layout from '@/Layouts/Panel.vue';
 import store from '@/store/index';
 
