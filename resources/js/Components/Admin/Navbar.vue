@@ -35,7 +35,7 @@
         <div class="absolute bg-gray-100 border border-t-0 shadow-xl text-gray-700 rounded-b-lg w-48  right-0 mr-6" :class="dropDownOpen ? '' : 'hidden'">
             <a href="#" class="block px-4 py-2 hover:bg-gray-200">Account</a>
             <a href="#" class="block px-4 py-2 hover:bg-gray-200">Settings</a>
-            <Link class="block px-4 py-2 hover:bg-gray-200" href="/logout" method="post" as="button">Logout</Link>
+            <Link class="block px-4 py-2 w-full text-left hover:bg-gray-200" href="/logout" method="post" as="button">Logout</Link>
         </div>
         <!-- dropdown menu end -->
 
